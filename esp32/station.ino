@@ -3,8 +3,8 @@
 #include <DHT.h>
 
 //  WIFI
-const char* ssid = "tutur_hotspot";
-const char* password = "simplepass";
+const char* ssid = "exemple_Wifi";
+const char* password = "jeSuisUnMotDePasseTresFort123!";
 
 //  MQTT 
 const char* mqtt_server = "captain.dev0.pandor.cloud";
