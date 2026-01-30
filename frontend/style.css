@@ -1,4 +1,4 @@
-:root {
+:root.light-mode {
   --blue900: #000a7a;
   --blue800: #005fa3;
   --blue700: #007afb;
@@ -6,6 +6,16 @@
   --blue500: #a5effc;
   --white0: rgba(255, 255, 255, 0.308);
   --white: #ffffff;
+}
+
+:root.dark-mode {
+  --blue900: #00005a;
+  --blue800: #00a0fb;
+  --blue700: #007afb;
+  --blue600: #2e4cc3;
+  --blue500: #0b1571;
+  --white0: rgba(76, 140, 251, 0.412);
+  --white: #c7f2ff;
 }
 html,
 body {
