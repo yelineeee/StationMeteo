@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <title>Station Météo</title>
-</head>
-<body>
-    <h1>Station Météo</h1>
-    <div>
-        <p>Température: <span id="temperature">--</span> °C</p>
-        <p>Humidité: <span id="humidity">--</span> %</p>
+  </head>
+  <body>
+    <!-- <h1>Station Météo</h1> -->
+    <div class="meteo-container">
+        <h3>heure</h3>
+        <h4>date</h4>
+        <div>
+            <h1>Température: <span id="temperature">--</span> °C</h1>
+            <h2>Humidité: <span id="humidity">--</span> %</h2>
+        </div>
+        <div>
+            <button id="switch">Changer Unité</button>
+        </div>
+        <p>Dernière mise à jour <span id="dateMaJ"> ..:..:..</span></p>
+        </div>
     </div>
-    <div>
-        <button id="switch">Changer Unité</button>
-    </div>
-</body>
+  </body>
 </html>
