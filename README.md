@@ -24,7 +24,7 @@ node index.js
 
 ## Membres du groupe :
 
-Caverne Emilie
-Guillemin Arthur
-Annic Ryan
-Goncalves Gama Kelly
+ - Caverne Emilie
+ - Guillemin Arthur
+ - Annic Ryan
+ - Goncalves Gama Kelly
