@@ -42,6 +42,7 @@ function startTemperatureService() {
 
   const tempElem = document.getElementById("temperature");
   const humidityElem = document.getElementById("humidity");
+  const unityElem = document.getElementById("unit");
   const dateMaJElem = document.getElementById("dateMaJ");
 
   socket.onopen = () => {
@@ -56,6 +57,9 @@ function startTemperatureService() {
       }
       if (humidityElem) {
         humidityElem.textContent = data.humidity ?? "--";
+      }
+      if (unityElem){
+        unityElem.textContent = data.unit ;
       }
       if (dateMaJElem) {
         const now = new Date();
