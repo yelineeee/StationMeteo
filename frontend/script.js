@@ -34,3 +34,43 @@ function setThemeByHour() {
   }
 }
 setThemeByHour();
+
+//chercher la temperature sur socket
+function startTemperatureService() {
+  const socket = new WebSocket("ws://localhost:8080");
+
+  const tempElem = document.getElementById("temperature");
+  const humidityElem = document.getElementById("humidity");
+  const dateMaJElem = document.getElementById("dateMaJ");
+
+  socket.onopen = () => {
+    console.log("WebSocket co");
+  };
+
+  socket.onmessage = (event) => {
+    try {
+      const data = JSON.parse(event.data);
+      if (tempElem) {
+        tempElem.textContent = data.temperature;
+      }
+      if (humidityElem) {
+        humidityElem.textContent = data.humidity ?? "--";
+      }
+      if (dateMaJElem) {
+        const now = new Date();
+        dateMaJElem.textContent = now.toLocaleTimeString("fr-FR");
+      }
+    } catch (err) {
+      console.error("rreur json", err);
+    }
+  };
+
+  socket.onerror = (err) => {
+    console.error("Erreur socket", err);
+  };
+
+  socket.onclose = () => {
+    console.warn("socket ferme");
+  };
+}
+startTemperatureService();
