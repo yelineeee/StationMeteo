@@ -1,14 +1,13 @@
-const mqtt = require("mqtt");
-const WebSocket = require("ws");
+import mqtt from "mqtt";
+import { WebSocketServer } from "ws";
 
 const MQTT_URL = "mqtt://captain.dev0.pandor.cloud:1884";
 const MQTT_TOPIC = "station/temperature";
-
 const WSS_PORT = 8080;
 
 const mqttClient = mqtt.connect(MQTT_URL);
 
-const wss = new WebSocket.Server({ port: WSS_PORT });
+const wss = new WebSocketServer({ port: WSS_PORT });
 
 mqttClient.on("connect", () => {
   console.log("Connected to broker MQTT");
@@ -17,8 +16,8 @@ mqttClient.on("connect", () => {
 mqttClient.on("message", (topic, message) => {
   const data = message.toString();
   console.log("MQTT →", data);
-  wss.clients.forEach(client => {
-    if (client.readyState === WebSocket.OPEN) {
+  wss.clients.forEach((client) => {
+    if (client.readyState === client.OPEN) {
       client.send(data);
     }
   });
