@@ -1,6 +1,5 @@
 :root.light-mode {
   --blue900: #000a7a;
-  --blue800: #005fa3;
   --blue700: #007afb;
   --blue600: #00a0fb;
   --blue500: #a5effc;
@@ -10,7 +9,6 @@
 
 :root.dark-mode {
   --blue900: #00005a;
-  --blue800: #00a0fb;
   --blue700: #007afb;
   --blue600: #2e4cc3;
   --blue500: #0b1571;
@@ -23,7 +21,12 @@ body {
 }
 body {
   margin: 0;
-  background: linear-gradient( to bottom, var(--blue700) 0%, var(--blue600) 50%, var(--blue500) 100% );
+  background: linear-gradient(
+    to bottom,
+    var(--blue700) 0%,
+    var(--blue600) 50%,
+    var(--blue500) 100%
+  );
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +42,7 @@ body {
   justify-content: center;
   background-color: var(--white0);
   border-radius: 10px;
-  width: 380px;
+  width: 400px;
   height: auto;
   color: var(--white);
   padding: 60px;
@@ -68,26 +71,9 @@ h4 {
   margin: 0 0 20px 0;
   color: var(--blue900);
 }
-#switch {
-  background: linear-gradient(
-    90deg,
-    var(--blue700) 0%,
-    var(--blue600) 100%
-  );
-  color: var(--white);
-  border: none;
-  border-radius: 10px;
-  padding: 14px 36px;
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 24px;
-}
-#switch:hover {
-  background: linear-gradient(90deg, var(--blue800) 0%, var(--blue700) 100%);
-  transform: translateY(-2px) scale(1.04);
-}
 p {
   margin-top: 10px;
   font-size: 14px;
   color: var(--blue900);
+  margin-bottom: 0;
 }

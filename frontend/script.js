@@ -1,25 +1,26 @@
-// Heure
-const heureElem = document.getElementById("heureJour");
-if (heureElem) {
-  const pad = (n) => n.toString().padStart(2, "0");
+// Heure / Date
+function updateDateTime() {
+  const heureElem = document.getElementById("heureJour");
+  const timeElem = document.getElementById("dateJour");
   const now = new Date();
-  const heureStr = pad(now.getHours()) + "h" + pad(now.getMinutes());
-  heureElem.dateTime = now.toTimeString().slice(0, 5);
-  heureElem.textContent = heureStr;
-}
-
-// Date
-const date = new Date();
-const timeElem = document.getElementById("dateJour");
+  if (heureElem) {
+    const pad = (n) => n.toString().padStart(2, "0");
+    const heureStr = pad(now.getHours()) + "h" + pad(now.getMinutes());
+    heureElem.dateTime = now.toTimeString().slice(0, 5);
+    heureElem.textContent = heureStr;
+  }
 if (timeElem) {
-  timeElem.dateTime = date.toISOString().split("T")[0];
-  timeElem.textContent = date.toLocaleDateString("fr-FR", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  timeElem.dateTime = now.toISOString().split("T")[0];
+  timeElem.textContent = now.toLocaleDateString("fr-FR", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  }
 }
+updateDateTime();
+setInterval(updateDateTime, 1000);
 
 // Dark mode
 function setThemeByHour() {
